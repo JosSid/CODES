@@ -56,3 +56,29 @@ console.log(foo3('Manolo', 'Fontanero'))
 const foo4 = (nombre, empleo) => `${nombre} es ${empleo}`
 
 console.log(foo4('Ari', 'Profesora'))
+
+
+
+const funcionMultiplicar = (value) => {
+    value *= 10
+    console.log('Ahora Value vale : ', value)
+}
+
+//No se altera valor porque es un valor primitivo
+let valor = 10
+funcionMultiplicar(valor)
+console.log('Valor despues de ejecutar la funcion: ', valor)
+//No se altera obj.value porque es un valor primitivo
+let obj = {
+    value:20
+}
+
+funcionMultiplicar(obj.value)
+console.log('Obj.value despues de ejecutar la funcion: ', obj.value)
+//se altera obj.value porque obj no es un valor primitivo y por lo tanto funciona por referencia
+const funcionMultiplicaKey = function(myObj) {
+    myObj.value *= 200
+    console.log(`myObj.value es ahora: ${myObj.value}`)
+}
+funcionMultiplicaKey(obj)
+console.log('Valor despues de ejecutar la funcion', obj.value)
