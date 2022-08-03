@@ -33,6 +33,6 @@ for ( let i = 0 ; i < totalFilas; i ++) {//Para cada columna
             fila.push('N')
         }
     }
-    console.log(fila.join(' '))// Join para convertir los elementos de un array a un string con pegamento(split pra alo contrario)
+    console.log(fila.join(' '))// Join para convertir los elementos de un array a un string con pegamento(split para lo contrario)
     
 }
