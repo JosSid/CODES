@@ -76,9 +76,9 @@ let obj = {
 funcionMultiplicar(obj.value)
 console.log('Obj.value despues de ejecutar la funcion: ', obj.value)
 //se altera obj.value porque obj no es un valor primitivo y por lo tanto funciona por referencia
-const funcionMultiplicaKey = function(myObj) {
-    myObj.value *= 200
-    console.log(`myObj.value es ahora: ${myObj.value}`)
+const funcionMultiplicaKey = function(myObj, key) {
+    myObj[key] *= 200//Acceder de forma dinamica a propiedades(keys) de un objeto
+    console.log(`myObj.${key} es ahora: ${myObj[key]}`)
 }
-funcionMultiplicaKey(obj)
+funcionMultiplicaKey(obj, 'value')
 console.log('Valor despues de ejecutar la funcion', obj.value)
