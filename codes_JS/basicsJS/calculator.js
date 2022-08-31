@@ -16,12 +16,23 @@ class Calculator {
     division(x, y) {
         return x / y
     }
+
+    mcd(x, y) {
+        while( x != y) {
+            if(x > y) {
+                x -= y
+            } else {
+                y -= x
+            }
+        }
+        return x
+    }
 }
 
 
 const calculin = new Calculator('Calculín')
 
-
+console.log(calculin.mcd(150, 3))
 
 const nums = [2, 5, 8, 11, 14, 17, 20]
 
