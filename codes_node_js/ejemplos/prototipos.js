@@ -18,6 +18,7 @@ Persona.prototype.saluda = function () {
 luis.saluda();
 pepe.saluda();
 
+//Herencia simple
 function Agente(nombre) {
     //heredar el constructor de las personas
     //llamar al constructor de personas con mi this
@@ -31,3 +32,22 @@ Agente.prototype.constructor = Agente;
 const brown = new Agente('Brown')
 
 brown.saluda();
+
+//Herencia multiple ----------------
+function Superheroe(){
+    this.vuela = function(){
+        console.log(this.nombre, 'vuela.')
+    }
+
+    this.esquivaBalas = function() {
+        console.log(this.nombre, 'esquiva balas.')
+    }
+}
+
+//Copiamos todas las propiedades de Superheroe al prototipo de Agente
+Object.assign(Agente.prototype, new Superheroe());
+
+brown.vuela();
+brown.esquivaBalas();
+
+console.log(Agente.prototype)
