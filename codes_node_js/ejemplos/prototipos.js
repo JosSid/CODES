@@ -17,3 +17,17 @@ Persona.prototype.saluda = function () {
 
 luis.saluda();
 pepe.saluda();
+
+function Agente(nombre) {
+    //heredar el constructor de las personas
+    //llamar al constructor de personas con mi this
+    Persona.call(this, nombre)
+}
+
+// heredamos propiedades de las personas
+Agente.prototype = Object.create(Persona.prototype);
+Agente.prototype.constructor = Agente;
+
+const brown = new Agente('Brown')
+
+brown.saluda();
